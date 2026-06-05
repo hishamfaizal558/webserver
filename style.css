@@ -402,6 +402,35 @@ pre {
   font-weight: 700;
 }
 
+.result-panel {
+  align-self: center;
+}
+
+.result-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 22px;
+}
+
+.result-list div {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.result-list dt {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.result-list dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+}
+
 .site-footer {
   padding: 24px clamp(18px, 5vw, 72px);
   color: var(--muted);
@@ -459,6 +488,11 @@ pre {
   .form-row {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .result-list div {
+    grid-template-columns: 1fr;
+    gap: 2px;
   }
 
   .button {

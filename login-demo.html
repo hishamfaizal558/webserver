@@ -22,15 +22,15 @@
       <div class="login-copy">
         <p class="eyebrow">Security awareness demo</p>
         <h1>Login page analysis without collecting real credentials.</h1>
-        <p class="lead">This demo shows the front-end structure of a login page and the basic checks a secure application should consider.</p>
+        <p class="lead">This demo sends test input to a local server handler and shows the basic checks a secure application should consider.</p>
         <div class="security-points">
-          <span>Client-side demo only</span>
-          <span>No password storage</span>
+          <span>Server POST demo</span>
+          <span>Password is masked</span>
           <span>HTTPS recommended</span>
         </div>
       </div>
 
-      <form class="login-panel" onsubmit="return showDemoMessage(event)">
+      <form class="login-panel" action="login-submit.php" method="post">
         <h2>Account Login</h2>
         <label for="email">Email address</label>
         <input id="email" name="email" type="email" placeholder="student@example.com" autocomplete="username" required>
@@ -46,8 +46,8 @@
           <a href="#">Forgot password?</a>
         </div>
 
-        <button class="button primary full-width" type="submit">Run Demo Check</button>
-        <p id="demo-message" class="demo-message" role="status" aria-live="polite"></p>
+        <button class="button primary full-width" type="submit">Send To Server</button>
+        <p class="demo-message">Use test/demo text only. Do not enter a real password.</p>
       </form>
     </section>
   </main>
@@ -55,14 +55,5 @@
   <footer class="site-footer">
     <p>Demo only. Never enter real passwords into practice forms.</p>
   </footer>
-
-  <script>
-    function showDemoMessage(event) {
-      event.preventDefault();
-      const message = document.getElementById('demo-message');
-      message.textContent = 'Demo complete: form validation ran in the browser. No data was sent or saved.';
-      return false;
-    }
-  </script>
 </body>
 </html>
