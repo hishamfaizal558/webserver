@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Demo | Security Awareness</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">LAN Web Lab</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="company.html">Company</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="login-demo.html" aria-current="page">Login Demo</a>
+    </nav>
+  </header>
+
+  <main class="login-page">
+    <section class="login-layout">
+      <div class="login-copy">
+        <p class="eyebrow">Security awareness demo</p>
+        <h1>Login page analysis without collecting real credentials.</h1>
+        <p class="lead">This demo shows the front-end structure of a login page and the basic checks a secure application should consider.</p>
+        <div class="security-points">
+          <span>Client-side demo only</span>
+          <span>No password storage</span>
+          <span>HTTPS recommended</span>
+        </div>
+      </div>
+
+      <form class="login-panel" onsubmit="return showDemoMessage(event)">
+        <h2>Account Login</h2>
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="student@example.com" autocomplete="username" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Use demo text only" autocomplete="current-password" minlength="8" required>
+
+        <div class="form-row">
+          <label class="checkbox-label">
+            <input type="checkbox" name="remember">
+            <span>Remember this browser</span>
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <button class="button primary full-width" type="submit">Run Demo Check</button>
+        <p id="demo-message" class="demo-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Demo only. Never enter real passwords into practice forms.</p>
+  </footer>
+
+  <script>
+    function showDemoMessage(event) {
+      event.preventDefault();
+      const message = document.getElementById('demo-message');
+      message.textContent = 'Demo complete: form validation ran in the browser. No data was sent or saved.';
+      return false;
+    }
+  </script>
+</body>
+</html>
